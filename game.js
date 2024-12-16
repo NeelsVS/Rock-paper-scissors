@@ -25,45 +25,60 @@ function getPlayerChoice(){ // input to get player choice;
             chosen = true;
         } else {
             alert("Choice not valid!");
-            
         } 
     }return choice
 }
 
-let playerScore = 0, computerScore = 0; // score counters;
+let playerScore = 0;
+let computerScore = 0;
 
 
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
+function playRound(playerChoice, computerChoice){ // checks who wins the round and adds points to winner score
 
 
-function playRound(){
-    function playRound(playerChoice, computerChoice){ // checks who wins the round and adds points to winner score
-
-        if (playerChoice == "Rock" && computerChoice == "Scissor"){
-             console.log("You WIN!");
-             playerScore ++;
-     
-        }else if (playerChoice == "Paper" && computerChoice == "Rock"){
-             console.log("You WIN!");
-             playerScore ++;
-     
-         }else if (playerChoice == "Scissor" && computerChoice == "Paper"){
-             console.log("You WIN!");
-             playerScore ++;
-     
-         }else if (playerChoice == computerChoice){
-             console.log("Its a tie!")
-     
-         } else {
-             console.log("You loose!");
-             computerScore ++
-         }
-     
+    if (playerChoice == "Rock" && computerChoice == "Scissor"){
+         console.log("You WIN!");
+         playerScore ++;
+ 
+    }else if (playerChoice == "Paper" && computerChoice == "Rock"){
+         console.log("You WIN!");
+         playerScore ++;
+ 
+     }else if (playerChoice == "Scissor" && computerChoice == "Paper"){
+         console.log("You WIN!");
+         playerScore ++;
+ 
+     }else if (playerChoice == computerChoice){
+         console.log("Its a tie!")
+ 
+     } else {
+         console.log("You loose!");
+         computerScore ++
      }
+ 
+ }
+
+
+function playGame(){
+ for (let game = 1; game <= 5; game++){
+
+        console.log("Round " + game)
+         let playerChoice = getPlayerChoice();
+         let computerChoice = getComputerChoice();
+         let round = playRound(playerChoice, computerChoice);
+         
+        }
+
+         if (playerScore > computerScore){
+            console.log("You win the game")
+         }else {
+            console.log("You loose the game!")
+         }
+
+     
+       
+    
 }
 
-
-
-
+playGame()
 
