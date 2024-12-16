@@ -19,7 +19,7 @@ function getPlayerChoice(){ // input to get player choice;
 
     while (!chosen){
     choice = prompt("Choose between rock, paper or scissors", "");
-    choice = choice.charAt(0).toUpperCase() + choice.substring(1);
+    choice = choice.charAt(0).toUpperCase() + choice.substring(1).toLocaleLowerCase();
 
       if( choice === "Rock" || choice === "Paper" || choice === "Scissor"){
             chosen = true;
@@ -59,7 +59,7 @@ function playRound(playerChoice, computerChoice){ // checks who wins the round a
  }
 
 
-function playGame(){
+function playGame(){ // game code
  for (let game = 1; game <= 5; game++){
 
         console.log("Round " + game)
@@ -74,10 +74,7 @@ function playGame(){
          }else {
             console.log("You loose the game!")
          }
-
-     
-       
-    
+         
 }
 
 playGame()
