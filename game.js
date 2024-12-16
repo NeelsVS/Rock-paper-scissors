@@ -1,4 +1,4 @@
-function getComputerChoice(){ //function for computer to pick between rock, paper or scissors.
+function getComputerChoice(){ //function for computer to pick between rock, paper or scissors;
 
     const getComputerChoice = Math.floor(Math.random()*3);
 
@@ -7,13 +7,13 @@ function getComputerChoice(){ //function for computer to pick between rock, pape
     } else if(getComputerChoice == 1){
         return "Paper";
     } else if(getComputerChoice == 2){
-       return  "Scissors";
+       return  "Scissor";
     }
 
     return getComputerChoice;
 }
 
-function getPlayerChoice(){
+function getPlayerChoice(){ // input to get player choice;
     let chosen = false;
     let choice;
 
@@ -30,4 +30,40 @@ function getPlayerChoice(){
     }return choice
 }
 
-getPlayerChoice()
+let playerScore = 0, computerScore = 0; // score counters;
+
+
+let playerChoice = getPlayerChoice();
+let computerChoice = getComputerChoice();
+
+
+function playRound(){
+    function playRound(playerChoice, computerChoice){ // checks who wins the round and adds points to winner score
+
+        if (playerChoice == "Rock" && computerChoice == "Scissor"){
+             console.log("You WIN!");
+             playerScore ++;
+     
+        }else if (playerChoice == "Paper" && computerChoice == "Rock"){
+             console.log("You WIN!");
+             playerScore ++;
+     
+         }else if (playerChoice == "Scissor" && computerChoice == "Paper"){
+             console.log("You WIN!");
+             playerScore ++;
+     
+         }else if (playerChoice == computerChoice){
+             console.log("Its a tie!")
+     
+         } else {
+             console.log("You loose!");
+             computerScore ++
+         }
+     
+     }
+}
+
+
+
+
+
